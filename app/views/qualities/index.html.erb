@@ -1,0 +1,26 @@
+<h1>Listing qualities</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Build point cost</th>
+  </tr>
+
+<% for quality in @qualities %>
+  <tr>
+    <td><%=h quality.name %></td>
+    <td><%=h quality.type %></td>
+    <td><%=h quality.description %></td>
+    <td><%=h quality.build_point_cost %></td>
+    <td><%= link_to 'Show', quality %></td>
+    <td><%= link_to 'Edit', edit_quality_path(quality) %></td>
+    <td><%= link_to 'Destroy', quality, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quality', new_quality_path %>
